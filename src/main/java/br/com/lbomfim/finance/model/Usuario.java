@@ -1,6 +1,7 @@
 package br.com.lbomfim.finance.model;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import br.com.lbomfim.finance.exception.EmailInvalidoException;
 import br.com.lbomfim.finance.exception.NomeInvalidoException;
@@ -23,10 +24,10 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
-	@Column(nullable = false, length = 20)
+	@Column(nullable = false, unique = true, length = 80)
 	private String nome;
 
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	@Column(nullable = false, unique = true, length = 20)
@@ -77,10 +78,13 @@ public class Usuario {
 	}
 	
 	public void setEmail(String email) throws EmailInvalidoException {
-		if(email == null || !email.contains("@")) {
-			throw new EmailInvalidoException();
-		}
-		this.email = email;
+		String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+	    Pattern pattern = Pattern.compile(emailRegex);
+
+	    if (email == null || !pattern.matcher(email).matches()) {
+	        throw new EmailInvalidoException();
+	    }
+	    this.email = email;
 	}
 
 	public String getUsername() {
