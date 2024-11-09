@@ -1,0 +1,12 @@
+br\com\lbomfim\finance\model\Usuario.class
+br\com\lbomfim\finance\FinanceApplication.class
+br\com\lbomfim\finance\controller\DespesaController.class
+br\com\lbomfim\finance\model\Despesa$Categoria.class
+br\com\lbomfim\finance\controller\UsuarioController.class
+br\com\lbomfim\finance\exception\NomeInvalidoException.class
+br\com\lbomfim\finance\repository\UsuarioRepository.class
+br\com\lbomfim\finance\model\Despesa.class
+br\com\lbomfim\finance\exception\EmailInvalidoException.class
+br\com\lbomfim\finance\repository\DespesaRepository.class
+br\com\lbomfim\finance\exception\UsuarioInvalidoException.class
+br\com\lbomfim\finance\exception\SenhaInvalidaException.class
