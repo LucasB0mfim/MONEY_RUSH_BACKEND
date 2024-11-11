@@ -3,6 +3,8 @@ package br.com.lbomfim.finance.model;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import br.com.lbomfim.finance.exception.EmailInvalidoException;
 import br.com.lbomfim.finance.exception.NomeInvalidoException;
 import br.com.lbomfim.finance.exception.SenhaInvalidaException;
@@ -40,6 +42,7 @@ public class Usuario {
 	private Double salario;
 	
 	@OneToMany(mappedBy = "usuario")
+	@JsonManagedReference
 	private List<Despesa> despesas;
 
 	// CONSTRUTOR VAZIO

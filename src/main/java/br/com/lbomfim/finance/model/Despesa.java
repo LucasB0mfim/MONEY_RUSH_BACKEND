@@ -2,6 +2,8 @@ package br.com.lbomfim.finance.model;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -51,6 +53,7 @@ public class Despesa {
 	private Categoria categoria;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "usuario_id", nullable = false)
 	private Usuario usuario;
 	

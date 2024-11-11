@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.com.lbomfim.finance.FinanceApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.24 s -- in br.com.lbomfim.finance.FinanceApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.18 s -- in br.com.lbomfim.finance.FinanceApplicationTests

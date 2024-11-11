@@ -62,12 +62,11 @@ public class DespesaController {
 	// METODO PARA BUSCAR
 	@GetMapping(path = "/buscar/{id}")
 	public List<Despesa> findByUsuarioId(@PathVariable("id") Long usuarioId) {
-		
-		if (usuarioRepository.existsById(usuarioId)) {
-			return despesaRepository.findByUsuarioId(usuarioId);
-		} else {
-			throw new UsuarioInvalidoException();
-		}
+	    if (usuarioRepository.existsById(usuarioId)) {
+	        return despesaRepository.findByUsuario_Id(usuarioId); // Método correto
+	    } else {
+	        throw new UsuarioInvalidoException();
+	    }
 	}
 	
 }

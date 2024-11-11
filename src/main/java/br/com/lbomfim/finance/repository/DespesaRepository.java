@@ -11,5 +11,5 @@ import br.com.lbomfim.finance.model.Despesa;
  */
 
 public interface DespesaRepository extends JpaRepository<Despesa, Long> {
-	List<Despesa> findByUsuarioId(Long usuarioId);
+    List<Despesa> findByUsuario_Id(Long usuarioId); // Correção já feita
 }
