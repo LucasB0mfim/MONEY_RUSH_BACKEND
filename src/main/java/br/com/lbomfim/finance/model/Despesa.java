@@ -1,8 +1,9 @@
 package br.com.lbomfim.finance.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,7 +47,8 @@ public class Despesa {
 	private int quantidade;
 	
 	@Column
-	private LocalDateTime data;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate data;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
@@ -63,7 +65,7 @@ public class Despesa {
 	}
 	
 	// CONSTRUTOR PADRAO
-	public Despesa(String descricao, Double valor, int quantidade, LocalDateTime data, Categoria categoria, Usuario usuario) {
+	public Despesa(String descricao, Double valor, int quantidade, LocalDate data, Categoria categoria, Usuario usuario) {
 		this.descricao = descricao;
 		this.valor = valor;
 		this.quantidade = quantidade;
@@ -101,7 +103,7 @@ public class Despesa {
 		this.quantidade = quantidade;
 	}
 	
-	public LocalDateTime getData() {
+	public LocalDate getData() {
 		return data;
 	}
 	
